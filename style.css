@@ -669,12 +669,12 @@ ul.beneficios {
 }
 
 /* Poster/overlay — visível antes de clicar */
+/* Fundo transparente: a thumbnail do <video poster=""> aparece por baixo */
 .resultado-card__poster {
   position: absolute;
   inset: 0;
   z-index: 2;
-  /* Fundo distinguível do fundo da seção: rosa médio com gradiente */
-  background: linear-gradient(160deg, #6B1E40 0%, #4A1230 50%, #2E0D1E 100%);
+  background: rgba(0,0,0,.28); /* overlay leve para o play ter contraste sobre a imagem */
   display: flex;
   align-items: center;
   justify-content: center;
