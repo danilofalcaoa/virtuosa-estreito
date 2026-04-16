@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Virtuosa Estreito — Estética e Emagrecimento em Florianópolis</title>
+  <meta name="description" content="Clínica de estética e emagrecimento no Estreito, Florianópolis. Velaryan, Monjifast, depilação laser 4D, tratamento de lipedema. Avaliação gratuita com bioimpedância.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+
+      <!-- ASSET-LOGO: virtuosa-logo
+           Local: navbar, versão clara sobre hero escuro, versão rosa sobre fundo claro
+           Dimensão: altura 40px (navbar) / 32px (footer)
+           Formato: SVG
+           Arquivo: assets/logo/logo-virtuosa.svg (clara) e assets/logo/logo-virtuosa-dark.svg (rosa)
+      -->
+      <a href="#" class="navbar__logo" aria-label="Clínica Virtuosa — início">
+        <span class="navbar__logo-text">Virtuosa</span>
+        <span class="navbar__logo-sub">Clínica Estética</span>
+      </a>
+
+      <nav class="navbar__menu" id="navMenu" aria-label="Menu principal">
+        <a href="#servicos" class="navbar__link">Serviços</a>
+        <a href="#resultados" class="navbar__link">Resultados</a>
+        <a href="#equipe" class="navbar__link">Equipe</a>
+        <a href="#faq" class="navbar__link">Dúvidas</a>
+        <a href="https://wa.me/5548999364612?text=Olá!%20Gostaria%20de%20agendar%20minha%20avaliação%20gratuita%20na%20Virtuosa." class="btn btn--primary navbar__cta" target="_blank" rel="noopener">Agendar avaliação</a>
+      </nav>
+
+      <button class="navbar__hamburger" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="inicio">
+      <!-- ASSET-IMAGEM: hero-bg
+           Local: fundo da seção hero, coluna direita em desktop
+           Dimensão: 560x680px desktop / apenas fundo escuro em mobile
+           Proporção: 5:6
+           Contexto: Profissional da clínica em jaleco branco, ambiente limpo com detalhes rosados, olhando para a câmera com postura confiante e acolhedora
+           Formato: WebP/JPG
+           Arquivo: assets/images/hero-profissional.jpg
+      -->
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow fade-up">O Espaço da Mulher · Estreito, Florianópolis</span>
+          <h1 class="fade-up delay-1">
+            Você não falhou nas dietas. O método é que estava errado.
+          </h1>
+          <p class="hero__sub fade-up delay-2">
+            Na Virtuosa, seu corpo é avaliado com tecnologia real antes de qualquer protocolo começar. Emagrecimento com acompanhamento completo, tratamentos para gordura localizada, celulite, lipedema e depilação a laser para todos os tipos de pele.
+          </p>
+          <div class="hero__ctas fade-up delay-3">
+            <a href="https://wa.me/5548999364612?text=Olá!%20Gostaria%20de%20agendar%20minha%20avaliação%20gratuita%20na%20Virtuosa." class="btn btn--accent" target="_blank" rel="noopener">
+              Agendar minha avaliação gratuita
+            </a>
+            <a href="#resultados" class="btn btn--outline-light">
+              Ver resultados reais
+            </a>
+          </div>
+          <div class="hero__trust fade-up delay-4">
+            <div class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.6 no Google · 102 avaliações</span>
+            </div>
+            <div class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Avaliação gratuita com bioimpedância</span>
+            </div>
+            <div class="trust-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Sem compromisso · Sem pressão</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__image fade-up delay-2">
+          <!-- ASSET-IMAGEM: hero-foto
+               Local: coluna direita do hero, apenas visível em desktop (min 1024px)
+               Dimensão: 420x520px
+               Proporção: 5:6
+               Contexto: Profissional da Virtuosa em ambiente da clínica, jaleco branco, postura acolhedora
+               Formato: WebP/JPG
+               Arquivo: assets/images/hero-profissional.jpg
+          -->
+          <div class="hero__image-placeholder">
+            <svg viewBox="0 0 420 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="420" height="520" rx="20" fill="#4A1535" opacity="0.5"/>
+              <circle cx="210" cy="180" r="70" fill="#C93A6E" opacity="0.3"/>
+              <path d="M130 420 Q210 300 290 420" fill="#C93A6E" opacity="0.2"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         PROPOSTA CENTRAL
+    ============================================================ -->
+    <section class="proposta" id="proposta">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow eyebrow--color">Por que a Virtuosa funciona</span>
+          <h2 class="section-title">A maioria das clínicas aplica o mesmo protocolo em todo mundo. A Virtuosa não funciona assim.</h2>
+        </div>
+
+        <div class="proposta__inner">
+          <div class="proposta__text fade-up">
+            <p>
+              Antes de qualquer sessão, você passa por uma avaliação com bioimpedância que mede gordura corporal, composição e idade do corpo com precisão. O protocolo começa depois. E o acompanhamento não termina quando você sai da cadeira: você tem suporte nutricional, médico e estético ao longo de todo o processo.
+            </p>
+            <p>
+              É por isso que as clientes chegam no segundo e no terceiro pacote ainda mais convictas do que no primeiro.
+            </p>
+            <a href="https://wa.me/5548999364612?text=Olá!%20Gostaria%20de%20agendar%20minha%20avaliação%20gratuita%20na%20Virtuosa." class="btn btn--primary" target="_blank" rel="noopener">Quero minha avaliação gratuita</a>
+          </div>
+
+          <ul class="beneficios fade-up delay-1">
+            <li class="beneficio-item">
+              <span class="beneficio-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Resultado visível e mensurável desde as primeiras sessões, com acompanhamento de medidas a cada atendimento</span>
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Método Monjifast exclusivo da Virtuosa para emagrecimento, que não exige dietas impossíveis de manter</span>
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Tratamento especializado para lipedema com Velaryan, um dos poucos disponíveis em Florianópolis</span>
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Depilação a laser 4D que funciona em qualquer tom de pele, da mais clara à mais escura</span>
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Avaliação gratuita e sem compromisso para entender o que faz sentido para o seu corpo antes de decidir</span>
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Acompanhamento nutricional integrado às sessões, adaptado à sua rotina real</span>
+            </li>
+            <li class="beneficio-item">
+              <span class="beneficio-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <span>Ambiente pensado para o seu conforto, com equipe que você aprende a conhecer pelo nome</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SERVIÇOS
+    ============================================================ -->
+    <section class="servicos" id="servicos">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow eyebrow--color">O que oferecemos</span>
+          <h2 class="section-title">Tratamentos para o seu corpo do jeito que ele merece</h2>
+        </div>
+
+        <div class="servicos__grid">
+
+          <article class="servico-card fade-up">
+            <div class="servico-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <h3 class="servico-card__title">Velaryan</h3>
+            <p class="servico-card__desc">Laser estacionário de alta potência para gordura localizada, celulite e lipedema. Sem dor, sem agulha, sem desconforto. Trata braços, abdômen, coxas e todo o corpo.</p>
+            <span class="servico-card__beneficio">Redução visível com tecnologia exclusiva — um dos poucos protocolos de lipedema em Florianópolis</span>
+          </article>
+
+          <article class="servico-card fade-up delay-1">
+            <div class="servico-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12h8M12 8v8"/></svg>
+            </div>
+            <h3 class="servico-card__title">Monjifast</h3>
+            <p class="servico-card__desc">Método exclusivo da Virtuosa com ativos para controle da fome, redução de inflamação e potencialização de resultados. Integrado ao acompanhamento nutricional e médico.</p>
+            <span class="servico-card__beneficio">Você emagrece com plano que respeita a sua rotina. Sem dieta restritiva que ninguém consegue manter</span>
+          </article>
+
+          <article class="servico-card fade-up delay-2">
+            <div class="servico-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 class="servico-card__title">Lipo Turbinada</h3>
+            <p class="servico-card__desc">Protocolo completo com esfoliação, massagem modeladora, ventosa terapia, termo gel e manta térmica. Aplicado em barriga, pernas, costas e bumbum em uma única sessão.</p>
+            <span class="servico-card__beneficio">Você sai da sessão mais leve, desinchada e definida. A diferença é sentida na hora</span>
+          </article>
+
+          <article class="servico-card fade-up">
+            <div class="servico-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            </div>
+            <h3 class="servico-card__title">Depilação a Laser 4D</h3>
+            <p class="servico-card__desc">Tecnologia HAKON MEDICAL SAN com quatro comprimentos de onda: Rubi, Alexandrite, Diodo e ND-YAG. Funciona em todos os fototipos de pele. Depila e clareia ao mesmo tempo.</p>
+            <span class="servico-card__beneficio">Fim dos pelos indesejados com eficiência real, sem limitação por tom de pele</span>
+          </article>
+
+          <article class="servico-card fade-up delay-1">
+            <div class="servico-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 class="servico-card__title">Tratamento de Lipedema</h3>
+            <p class="servico-card__desc">Protocolo específico com Velaryan e acompanhamento da Dra. Priscila (nutricionista), com avaliação de bioimpedância para monitorar evolução sessão a sessão.</p>
+            <span class="servico-card__beneficio">Redução de dor, inchaço e desconforto com tratamento feito para o lipedema, não adaptado de outro protocolo</span>
+          </article>
+
+          <article class="servico-card fade-up delay-2">
+            <div class="servico-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="servico-card__title">Rejuvenescimento Facial</h3>
+            <!-- PLACEHOLDER: solicitar à Virtuosa quais procedimentos faciais são realizados, com que tecnologia e quem aplica -->
+            <p class="servico-card__desc">Tecnologias de ponta para renovação, firmeza e viço da pele do rosto. Protocolos adaptados ao seu tipo de pele e ao resultado que você quer alcançar.</p>
+            <span class="servico-card__beneficio">Pele mais jovem, uniforme e com brilho real — sem necessidade de procedimentos invasivos</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         COMO FUNCIONA
+    ============================================================ -->
+    <section class="como-funciona" id="como-funciona">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow eyebrow--color">Simples assim</span>
+          <h2 class="section-title">Como funciona na Virtuosa</h2>
+          <p class="section-sub">Do primeiro contato ao resultado documentado em 5 passos</p>
+        </div>
+
+        <div class="passos__grid">
+
+          <div class="passo fade-up">
+            <div class="passo__num" aria-hidden="true">01</div>
+            <h3 class="passo__title">Você fala com a gente no WhatsApp</h3>
+            <p class="passo__desc">Sem formulário complicado, sem fila de espera. Chama a nossa equipe e conta o que você está buscando. Agendamos a avaliação no horário que funciona para você.</p>
+          </div>
+
+          <div class="passo fade-up delay-1">
+            <div class="passo__num" aria-hidden="true">02</div>
+            <h3 class="passo__title">Avaliação gratuita com bioimpedância</h3>
+            <p class="passo__desc">Medimos sua composição corporal com tecnologia de precisão: gordura, massa, hidratação e idade biológica do corpo. Você entende o que está acontecendo de verdade antes de qualquer protocolo ser sugerido.</p>
+          </div>
+
+          <div class="passo fade-up delay-2">
+            <div class="passo__num" aria-hidden="true">03</div>
+            <h3 class="passo__title">Plano personalizado, sem pressão</h3>
+            <p class="passo__desc">Com base na avaliação, a especialista apresenta o que faz sentido para o seu caso. Você decide o que quer fazer e quando. Sem empurrar procedimento que não precisa.</p>
+          </div>
+
+          <div class="passo fade-up">
+            <div class="passo__num" aria-hidden="true">04</div>
+            <h3 class="passo__title">Tratamento com acompanhamento real</h3>
+            <p class="passo__desc">Cada sessão é registrada. Medidas e peso são acompanhados a cada atendimento. Você vê a evolução em números, não em promessa.</p>
+          </div>
+
+          <div class="passo fade-up delay-1">
+            <div class="passo__num" aria-hidden="true">05</div>
+            <h3 class="passo__title">Você sai diferente e sabe exatamente por quê</h3>
+            <p class="passo__desc">Menos inchaço, mais definição, menos dor, mais leveza. Com histórico documentado para confirmar cada avanço.</p>
+          </div>
+
+        </div>
+
+        <div class="como-funciona__cta fade-up">
+          <a href="https://wa.me/5548999364612?text=Olá!%20Gostaria%20de%20agendar%20minha%20avaliação%20gratuita%20na%20Virtuosa." class="btn btn--primary" target="_blank" rel="noopener">
+            Começar pelo WhatsApp
+          </a>
+          <span class="cta-note">Avaliação gratuita · Sem compromisso · Respondemos no mesmo dia</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         RESULTADOS — CARROSSEL DE VÍDEOS
+    ============================================================ -->
+    <section class="resultados" id="resultados">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow eyebrow--color">Resultados reais</span>
+          <h2 class="section-title">Veja a transformação das nossas clientes</h2>
+          <p class="section-sub">Resultados documentados. Clientes reais. Procedimentos realizados aqui no Estreito.</p>
+        </div>
+      </div>
+
+      <div class="resultados__carousel fade-up">
+        <div class="resultados__track-wrapper">
+          <div class="resultados__track" id="resultadosTrack">
+
+            <!-- Card 1 -->
+            <div class="resultado-card">
+              <!-- ASSET-VIDEO: resultado-velaryan
+                   Local: carrossel de resultados, card 1
+                   Contexto: Vídeo do Velaryan — tratamento de gordura localizada/celulite. Maior engajamento (80 interações).
+                   Arquivo: assets/videos/resultado-velaryan.mp4
+                   Origem: reel_01_80_interacoes/video.mp4
+              -->
+              <!-- ASSET-IMAGEM: poster-velaryan
+                   Local: thumbnail do card de vídeo antes de clicar
+                   Arquivo: assets/images/poster-velaryan.jpg
+              -->
+              <div class="resultado-card__poster">
+                <div class="resultado-card__placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <video src="assets/videos/resultado-velaryan.mp4" loop muted playsinline preload="none" poster="assets/images/poster-velaryan.jpg" aria-label="Resultado Velaryan — gordura localizada e celulite"></video>
+              <div class="resultado-card__label">Velaryan</div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="resultado-card">
+              <!-- ASSET-VIDEO: resultado-lipoturbinada
+                   Local: carrossel de resultados, card 2
+                   Contexto: Tour completo da Lipo Turbinada — esfoliação, massagem, manta térmica. 40 interações.
+                   Arquivo: assets/videos/resultado-lipoturbinada.mp4
+                   Origem: reel_43_40_interacoes/video.mp4
+              -->
+              <div class="resultado-card__poster">
+                <div class="resultado-card__placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <video src="assets/videos/resultado-lipoturbinada.mp4" loop muted playsinline preload="none" poster="assets/images/poster-lipoturbinada.jpg" aria-label="Resultado Lipo Turbinada"></video>
+              <div class="resultado-card__label">Lipo Turbinada</div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="resultado-card">
+              <!-- ASSET-VIDEO: resultado-monjifast-20kg
+                   Local: carrossel de resultados, card 3
+                   Contexto: Transformação menos 20kg com Monjifast. 19 interações.
+                   Arquivo: assets/videos/resultado-monjifast-20kg.mp4
+                   Origem: reel_49_19_interacoes/video.mp4
+              -->
+              <div class="resultado-card__poster">
+                <div class="resultado-card__placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <video src="assets/videos/resultado-monjifast-20kg.mp4" loop muted playsinline preload="none" poster="assets/images/poster-monjifast-20kg.jpg" aria-label="Transformação menos 20kg com Monjifast"></video>
+              <div class="resultado-card__label">Monjifast &minus;20kg</div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="resultado-card">
+              <!-- ASSET-VIDEO: resultado-monjifast-7kg
+                   Local: carrossel de resultados, card 4
+                   Contexto: Depoimento menos 7kg com acompanhamento completo. 47 interações (maior engajamento depoimento).
+                   Arquivo: assets/videos/resultado-monjifast-7kg.mp4
+                   Origem: reel_02_47_interacoes/video.mp4
+              -->
+              <div class="resultado-card__poster">
+                <div class="resultado-card__placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <video src="assets/videos/resultado-monjifast-7kg.mp4" loop muted playsinline preload="none" poster="assets/images/poster-monjifast-7kg.jpg" aria-label="Depoimento menos 7kg com Monjifast"></video>
+              <div class="resultado-card__label">Monjifast &minus;7kg</div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="resultado-card">
+              <!-- ASSET-VIDEO: resultado-depilacao-laser
+                   Local: carrossel de resultados, card 5
+                   Contexto: Depilação a laser HAKON 4D. 21 interações.
+                   Arquivo: assets/videos/resultado-depilacao-laser.mp4
+                   Origem: reel_03_21_interacoes/video.mp4
+              -->
+              <div class="resultado-card__poster">
+                <div class="resultado-card__placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <video src="assets/videos/resultado-depilacao-laser.mp4" loop muted playsinline preload="none" poster="assets/images/poster-depilacao.jpg" aria-label="Depilação a laser HAKON 4D"></video>
+              <div class="resultado-card__label">Depilação Laser 4D</div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="resultado-card">
+              <!-- ASSET-VIDEO: resultado-lipedema
+                   Local: carrossel de resultados, card 6
+                   Contexto: Tratamento de lipedema com Velaryan. 11 interações.
+                   Arquivo: assets/videos/resultado-lipedema.mp4
+                   Origem: reel_51_11_interacoes/video.mp4
+              -->
+              <div class="resultado-card__poster">
+                <div class="resultado-card__placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <video src="assets/videos/resultado-lipedema.mp4" loop muted playsinline preload="none" poster="assets/images/poster-lipedema.jpg" aria-label="Tratamento de lipedema com Velaryan"></video>
+              <div class="resultado-card__label">Lipedema</div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="resultado-card">
+              <!-- ASSET-VIDEO: resultado-transformacao-carol
+                   Local: carrossel de resultados, card 7
+                   Contexto: Resultado da Carol — feliz, radiante, autoestima elevada. 19 interações.
+                   Arquivo: assets/videos/resultado-transformacao.mp4
+                   Origem: reel_56_19_interacoes/video.mp4
+              -->
+              <div class="resultado-card__poster">
+                <div class="resultado-card__placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <video src="assets/videos/resultado-transformacao.mp4" loop muted playsinline preload="none" poster="assets/images/poster-transformacao.jpg" aria-label="Transformação com protocolo Virtuosa"></video>
+              <div class="resultado-card__label">Transformação</div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="resultado-card">
+              <!-- ASSET-VIDEO: resultado-monjifast-resultado
+                   Local: carrossel de resultados, card 8
+                   Contexto: Resultado incríssimo do Método Fast. 6 interações.
+                   Arquivo: assets/videos/resultado-metodo-fast.mp4
+                   Origem: reel_44_6_interacoes/video.mp4
+              -->
+              <div class="resultado-card__poster">
+                <div class="resultado-card__placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+              <video src="assets/videos/resultado-metodo-fast.mp4" loop muted playsinline preload="none" poster="assets/images/poster-metodo-fast.jpg" aria-label="Resultado Método Monjifast"></video>
+              <div class="resultado-card__label">Método Fast</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="resultados__controls">
+          <button class="carousel-btn carousel-btn--prev" id="resultadosPrev" aria-label="Vídeo anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="carousel-dots" id="resultadosDots" aria-label="Navegação do carrossel"></div>
+          <button class="carousel-btn carousel-btn--next" id="resultadosNext" aria-label="Próximo vídeo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="resultados__hint fade-up">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <span>Toque no vídeo para reproduzir</span>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         DEPOIMENTOS
+    ============================================================ -->
+    <section class="depoimentos" id="depoimentos">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow eyebrow--accent">O que as clientes dizem</span>
+          <h2 class="section-title section-title--light">Não é promessa. É o que elas mesmas escreveram no Google.</h2>
+          <div class="depoimentos__stats fade-up delay-1">
+            <div class="stat">
+              <span class="stat__num">4.6</span>
+              <span class="stat__label">estrelas no Google</span>
+              <div class="stat__stars" aria-label="4.6 estrelas">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+            </div>
+            <div class="stat">
+              <span class="stat__num">102</span>
+              <span class="stat__label">avaliações no Google</span>
+            </div>
+            <div class="stat">
+              <!-- PLACEHOLDER: confirmar número de clientes atendidas -->
+              <span class="stat__num">+3</span>
+              <span class="stat__label">pacotes por cliente (média)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimentos__grid">
+
+          <article class="depoimento-card fade-up">
+            <div class="depoimento-card__stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="depoimento-card__texto">
+              "Faço tratamento para o Lipedema há alguns meses e estou adorando o resultado. As meninas são sempre muito prestativas e o agendamento fácil sem dificuldade nos horários. Já estou no meu terceiro pacote e não troco por nada."
+            </blockquote>
+            <footer class="depoimento-card__autor">
+              <div class="depoimento-card__avatar" aria-hidden="true">P</div>
+              <div>
+                <cite class="depoimento-card__nome">Patricia Henrique</cite>
+                <span class="depoimento-card__detalhe">Tratamento de Lipedema</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="depoimento-card fade-up delay-1">
+            <div class="depoimento-card__stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="depoimento-card__texto">
+              "Já passei por várias clínicas de estética, todas só querem nosso dinheiro. Na clínica Virtuosa do Estreito não é assim. A avaliação é extremamente séria. Meu tratamento de Lipedema foi maravilhoso. Dra. Priscila super gente boa, até me deixou comer chocolate de vez em quando."
+            </blockquote>
+            <footer class="depoimento-card__autor">
+              <div class="depoimento-card__avatar" aria-hidden="true">A</div>
+              <div>
+                <cite class="depoimento-card__nome">Amanda Santos</cite>
+                <span class="depoimento-card__detalhe">Lipedema · Acompanhamento Nutricional</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="depoimento-card fade-up delay-2">
+            <div class="depoimento-card__stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="depoimento-card__texto">
+              "Não se trata somente de estética e sim resgate de autoestima. Os meus momentos na clínica são de cuidado e carinho. Gratidão a cada profissional incrível desse lugar maravilhoso!!"
+            </blockquote>
+            <footer class="depoimento-card__autor">
+              <div class="depoimento-card__avatar" aria-hidden="true">L</div>
+              <div>
+                <cite class="depoimento-card__nome">Ledyr Franca da Silva</cite>
+                <span class="depoimento-card__detalhe">Cliente Virtuosa Estreito</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="depoimento-card fade-up">
+            <div class="depoimento-card__stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="depoimento-card__texto">
+              "Sou cliente desde janeiro de 2025 e estou amando a clínica. Inicialmente fiz um pacote e agora já estou com mais dois pacotes. Com toda a certeza, indico a Virtuosa da unidade Estreito. Vocês fizeram eu recuperar a minha autoestima!"
+            </blockquote>
+            <footer class="depoimento-card__autor">
+              <div class="depoimento-card__avatar" aria-hidden="true">S</div>
+              <div>
+                <cite class="depoimento-card__nome">Sthefany Santos</cite>
+                <span class="depoimento-card__detalhe">3 pacotes · cliente desde 2025</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="depoimento-card fade-up delay-1">
+            <div class="depoimento-card__stars" aria-label="5 estrelas">★★★★★</div>
+            <blockquote class="depoimento-card__texto">
+              "Atendimento maravilhoso, desde a organização das agendas até os contatos pós procedimento. Destaco a pontualidade dos atendimentos."
+            </blockquote>
+            <footer class="depoimento-card__autor">
+              <div class="depoimento-card__avatar" aria-hidden="true">V</div>
+              <div>
+                <cite class="depoimento-card__nome">Vanessa N C Losso</cite>
+                <span class="depoimento-card__detalhe">Cliente Virtuosa Estreito</span>
+              </div>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         EQUIPE
+    ============================================================ -->
+    <section class="equipe" id="equipe">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow eyebrow--color">Quem cuida de você</span>
+          <h2 class="section-title">A equipe que as clientes citam pelo nome</h2>
+          <p class="section-sub">Na Virtuosa, você não é uma ficha no sistema. Você é uma cliente que as profissionais acompanham de sessão em sessão.</p>
+        </div>
+
+        <div class="equipe__texto fade-up">
+          <p>A Virtuosa nasceu com um propósito claro: ser o espaço da mulher que quer resultado de verdade, sem dieta impossível e sem protocolo copiado de outra clínica.</p>
+          <p>À frente do acompanhamento nutricional está a <strong>Dra. Priscila</strong>, nutricionista conhecida entre as clientes pela abordagem humana e adaptada à realidade de cada uma. Ela não entrega lista de restrição. Ela constrói um plano que cabe na sua vida.</p>
+          <p>A equipe de esteticistas, liderada por <strong>Nayara</strong> e com profissionais como <strong>Alessandra</strong>, <strong>Jéssica</strong> e <strong>Débora</strong>, é citada por nome em praticamente todos os depoimentos do Google. Não é coincidência.</p>
+        </div>
+
+        <div class="equipe__grid">
+
+          <div class="membro-card fade-up">
+            <!-- ASSET-IMAGEM: foto-nayara
+                 Local: card de equipe, foto circular
+                 Dimensão: 200x200px
+                 Proporção: 1:1 (círculo)
+                 Contexto: Nayara em ambiente da clínica, jaleco branco, expressão acolhedora
+                 Formato: WebP/JPG
+                 Arquivo: assets/images/foto-nayara.jpg
+            -->
+            <div class="membro-card__foto" aria-hidden="true">N</div>
+            <h3 class="membro-card__nome">Nayara</h3>
+            <span class="membro-card__cargo">Coordenadora · Especialista em estética</span>
+            <!-- PLACEHOLDER: confirmar cargo formal da Nayara -->
+            <p class="membro-card__bio">Citada com destaque por múltiplas clientes. "Toda a paciência e atenção desde o começo."</p>
+          </div>
+
+          <div class="membro-card fade-up delay-1">
+            <!-- ASSET-IMAGEM: foto-dra-priscila
+                 Local: card de equipe, foto circular
+                 Dimensão: 200x200px
+                 Proporção: 1:1 (círculo)
+                 Contexto: Dra. Priscila em ambiente de consultório, expressão profissional e acolhedora
+                 Formato: WebP/JPG
+                 Arquivo: assets/images/foto-dra-priscila.jpg
+            -->
+            <div class="membro-card__foto" aria-hidden="true">P</div>
+            <h3 class="membro-card__nome">Dra. Priscila</h3>
+            <span class="membro-card__cargo">Nutricionista</span>
+            <p class="membro-card__bio">Conhecida pelo método sem dietas restritivas. Cria planos que cabem na vida real de cada cliente.</p>
+          </div>
+
+          <div class="membro-card fade-up delay-2">
+            <!-- ASSET-IMAGEM: foto-alessandra
+                 Local: card de equipe, foto circular
+                 Dimensão: 200x200px
+                 Proporção: 1:1 (círculo)
+                 Arquivo: assets/images/foto-alessandra.jpg
+            -->
+            <div class="membro-card__foto" aria-hidden="true">A</div>
+            <h3 class="membro-card__nome">Alessandra</h3>
+            <span class="membro-card__cargo">Esteticista Sênior</span>
+            <p class="membro-card__bio">"A esteticista mais experiente e querida", segundo as próprias clientes nos depoimentos do Google.</p>
+          </div>
+
+        </div>
+
+        <!-- ASSET-IMAGEM: foto-espaco-clinica
+             Local: seção equipe, imagem do ambiente da clínica
+             Dimensão: 1200x500px
+             Proporção: 12:5 (panorâmica)
+             Contexto: Espaço interno da Virtuosa — sala de atendimento, sala de espera com cafezinho, ambiente limpo e organizado com detalhes em rosa
+             Formato: WebP/JPG
+             Arquivo: assets/images/espaco-clinica.jpg
+        -->
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         DIFERENCIAIS
+    ============================================================ -->
+    <section class="diferenciais" id="diferenciais">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow eyebrow--color">Por que a Virtuosa e não outra</span>
+          <h2 class="section-title">5 diferenciais que você não vai encontrar em qualquer clínica</h2>
+        </div>
+
+        <div class="diferenciais__grid">
+
+          <article class="diferencial-card fade-up">
+            <div class="diferencial-card__num" aria-hidden="true">01</div>
+            <h3 class="diferencial-card__title">Avaliação com bioimpedância antes de qualquer protocolo</h3>
+            <p class="diferencial-card__desc">Qualquer clínica consegue aplicar um procedimento. Poucas avaliam com seriedade antes de começar. Na Virtuosa, a bioimpedância mede gordura, composição corporal e hidratação com precisão clínica. Você sabe exatamente o que está acontecendo no seu corpo antes de gastar um centavo em sessão.</p>
+          </article>
+
+          <article class="diferencial-card fade-up delay-1">
+            <div class="diferencial-card__num" aria-hidden="true">02</div>
+            <h3 class="diferencial-card__title">Monjifast: método próprio, não revenda de produto</h3>
+            <p class="diferencial-card__desc">O Monjifast não é um suplemento comprado de distribuidor com a etiqueta da Virtuosa colada. É um protocolo desenvolvido pela própria equipe, com combinação de ativos para controle de fome, redução de inflamação e aceleração de resultados. Funciona porque foi criado aqui.</p>
+          </article>
+
+          <article class="diferencial-card fade-up delay-2">
+            <div class="diferencial-card__num" aria-hidden="true">03</div>
+            <h3 class="diferencial-card__title">Tratamento de lipedema com Velaryan</h3>
+            <p class="diferencial-card__desc">Lipedema é uma condição crônica que muitas mulheres carregam sem diagnóstico durante anos. Inchaço, dor, sensação de peso nas pernas que não melhora com dieta nem exercício. A Virtuosa oferece protocolo específico com Velaryan para essa condição. Não é improviso.</p>
+          </article>
+
+          <article class="diferencial-card fade-up">
+            <div class="diferencial-card__num" aria-hidden="true">04</div>
+            <h3 class="diferencial-card__title">Acompanhamento completo, não sessão avulsa</h3>
+            <p class="diferencial-card__desc">Nutricional, médico e estético no mesmo lugar, com profissionais que se comunicam sobre o seu caso. Você não sai da Virtuosa sem saber o que fazer em casa para potencializar o resultado. E a equipe te contata depois das sessões para acompanhar a evolução.</p>
+          </article>
+
+          <article class="diferencial-card fade-up delay-1">
+            <div class="diferencial-card__num" aria-hidden="true">05</div>
+            <h3 class="diferencial-card__title">Depilação a laser 4D que funciona em qualquer tom de pele</h3>
+            <p class="diferencial-card__desc">A tecnologia HAKON MEDICAL SAN combina quatro comprimentos de onda diferentes no mesmo equipamento. Pele clara, morena, negra: funciona em todos os fototipos sem adaptação ou limitação. E depila e clareia ao mesmo tempo.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="eyebrow eyebrow--color">Perguntas frequentes</span>
+          <h2 class="section-title">Dúvidas antes de agendar</h2>
+        </div>
+
+        <div class="faq__list fade-up">
+
+          <div class="faq-item">
+            <button class="faq-item__pergunta" aria-expanded="false">
+              Como funciona a avaliação gratuita?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__resposta">
+              <p>Você agenda pelo WhatsApp. Na consulta, a especialista faz a avaliação com bioimpedância para entender sua composição corporal, ouve o que você está buscando e apresenta o protocolo que faz sentido para o seu caso. Sem pressão para fechar na hora. Você decide no seu tempo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__pergunta" aria-expanded="false">
+              Vocês atendem no Estreito? Fica longe do centro?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__resposta">
+              <p>A clínica fica na Rua Bernardino Vaz, 32, Bairro Estreito, Florianópolis. Fica próximo da orla do Estreito, de fácil acesso pela região central de Florianópolis.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__pergunta" aria-expanded="false">
+              O Monjifast funciona mesmo sem dieta restritiva?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__resposta">
+              <p>Sim. O método usa uma combinação de ativos para controle de fome e redução de inflamação que torna o processo mais fácil de manter. O acompanhamento nutricional da Dra. Priscila é adaptado à sua rotina real. Clientes com agendas pesadas e que trabalham com comida relatam resultados consistentes.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__pergunta" aria-expanded="false">
+              A depilação a laser funciona para peles negras?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__resposta">
+              <p>Funciona para todos os fototipos de pele. A tecnologia HAKON MEDICAL SAN 4D combina quatro comprimentos de onda (Rubi, Alexandrite, Diodo e ND-YAG) justamente para garantir eficiência em qualquer tom de pele, da mais clara à mais escura.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__pergunta" aria-expanded="false">
+              Quantas sessões preciso para ver resultado?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__resposta">
+              <p>Depende do tratamento. Na avaliação gratuita, a especialista vai te dar uma estimativa mais precisa para o seu caso. No geral, clientes de Lipo Turbinada sentem a diferença já na primeira sessão. Para emagrecimento com Monjifast, os resultados documentados mostram de 7kg a 20kg de diferença ao longo de pacotes completos.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__pergunta" aria-expanded="false">
+              Tenho lipedema. Tratamento estético realmente ajuda?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__resposta">
+              <p>Ajuda, sim, mas só quando feito com protocolo certo para essa condição. O Velaryan não é um aparelho genérico adaptado para lipedema. É uma tecnologia de laser estacionário que trabalha especificamente na circulação e no inchaço. Clientes com lipedema relatam redução de dor e de sensação de peso já nas primeiras sessões.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__pergunta" aria-expanded="false">
+              Trabalham com parcelamento?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__resposta">
+              <!-- PLACEHOLDER: confirmar formas de pagamento aceitas -->
+              <p>Entre em contato com a nossa equipe pelo WhatsApp para obter informações completas sobre formas de pagamento e parcelamento disponíveis.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CTA FINAL
+    ============================================================ -->
+    <section class="cta-final" id="agendar">
+      <div class="container">
+        <div class="cta-final__inner fade-up">
+          <span class="eyebrow eyebrow--accent">Dê o primeiro passo</span>
+          <h2 class="cta-final__title">
+            Você chegou até aqui porque tem algo no seu corpo que te incomoda faz tempo.
+          </h2>
+          <p class="cta-final__sub">
+            Uma condição que você não conseguiu resolver sozinha ou com métodos que não eram certos para o seu caso. Na Virtuosa, a gente começa do lugar certo: entendendo o que está acontecendo de verdade, antes de qualquer sessão.
+          </p>
+          <a href="https://wa.me/5548999364612?text=Olá!%20Gostaria%20de%20agendar%20minha%20avaliação%20gratuita%20na%20Virtuosa." class="btn btn--accent btn--lg" target="_blank" rel="noopener">
+            Agendar minha avaliação gratuita
+          </a>
+          <p class="cta-final__reductors">
+            Avaliação gratuita &middot; Sem compromisso &middot; Atendimento até as 20h
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo-text">Virtuosa</span>
+        <p class="footer__tagline">O Espaço da Mulher</p>
+        <p class="footer__desc">Clínica de estética e emagrecimento no coração do Estreito, Florianópolis.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Serviços</h4>
+        <ul class="footer__links">
+          <li><a href="#servicos">Velaryan</a></li>
+          <li><a href="#servicos">Monjifast</a></li>
+          <li><a href="#servicos">Lipo Turbinada</a></li>
+          <li><a href="#servicos">Depilação a Laser 4D</a></li>
+          <li><a href="#servicos">Tratamento de Lipedema</a></li>
+          <li><a href="#servicos">Rejuvenescimento Facial</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Contato</h4>
+        <ul class="footer__info">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Rua Bernardino Vaz, 32<br>Estreito, Florianópolis/SC</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.42 2 2 0 0 1 3.6 2.23h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.85-.85a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+            <a href="tel:+5548999364612">(48) 99936-4612</a>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><polyline points="8 21 12 17 16 21"/></svg>
+            <span>Fecha às 20h</span>
+          </li>
+        </ul>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/virtuosafloripaestreito" target="_blank" rel="noopener" aria-label="Instagram da Virtuosa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2025 Clínica Virtuosa Unidade Estreito. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       WHATSAPP FLUTUANTE
+  ============================================================ -->
+  <a class="whatsapp-float"
+     href="https://wa.me/5548999364612?text=Olá!%20Gostaria%20de%20agendar%20minha%20avaliação%20gratuita%20na%20Virtuosa."
+     target="_blank"
+     rel="noopener"
+     aria-label="Falar no WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="whatsapp-float__label">WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
