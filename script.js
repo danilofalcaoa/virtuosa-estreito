@@ -1,52 +1,25 @@
 /* ============================================================
-   CLÍNICA VIRTUOSA — SCRIPT.JS
-   Vanilla JS | Sem dependências externas
+   CLÍNICA VIRTUOSA — SCRIPT.JS v2
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ----------------------------------------------------------
-     1. LUCIDE ICONS
+     LUCIDE ICONS
   ---------------------------------------------------------- */
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
-  }
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 
 
   /* ----------------------------------------------------------
-     2. NAVBAR — scroll + hamburger
+     NAVBAR — scroll + hamburger
   ---------------------------------------------------------- */
   const navbar     = document.getElementById('navbar');
   const menuToggle = document.getElementById('menuToggle');
   const navMenu    = document.getElementById('navMenu');
 
-  function handleNavbarScroll() {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-  }
-  window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-  handleNavbarScroll();
-
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.contains('open');
-      navMenu.classList.toggle('open', !isOpen);
-      menuToggle.classList.toggle('open', !isOpen);
-      menuToggle.setAttribute('aria-expanded', String(!isOpen));
-      document.body.style.overflow = isOpen ? '' : 'hidden';
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    document.addEventListener('click', e => {
-      if (
-        navMenu.classList.contains('open') &&
-        !navMenu.contains(e.target) &&
-        !menuToggle.contains(e.target)
-      ) closeMenu();
-    });
-  }
+  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 60);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   function closeMenu() {
     navMenu.classList.remove('open');
@@ -55,58 +28,66 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = navMenu.classList.contains('open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      navMenu.classList.add('open');
+      menuToggle.classList.add('open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  navMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  document.addEventListener('click', e => {
+    if (navMenu?.classList.contains('open') &&
+        !navMenu.contains(e.target) &&
+        !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
 
   /* ----------------------------------------------------------
-     3. FADE-UP — IntersectionObserver
+     FADE-UP — IntersectionObserver
   ---------------------------------------------------------- */
-  const fadeEls = document.querySelectorAll('.fade-up');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  if (fadeEls.length) {
-    const fadeObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            fadeObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
-    );
-    fadeEls.forEach(el => fadeObserver.observe(el));
-  }
+  document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
 
   /* ----------------------------------------------------------
-     4. FAQ ACCORDION
+     FAQ ACCORDION
   ---------------------------------------------------------- */
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const btn = item.querySelector('.faq-item__pergunta');
-    if (!btn) return;
-
-    btn.addEventListener('click', () => {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-item__pergunta')?.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-
       // Fechar todos
-      faqItems.forEach(other => {
-        other.classList.remove('open');
-        const otherBtn = other.querySelector('.faq-item__pergunta');
-        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-item__pergunta')?.setAttribute('aria-expanded', 'false');
       });
-
-      // Toggle atual
+      // Abrir o clicado (se estava fechado)
       if (!isOpen) {
         item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
+        item.querySelector('.faq-item__pergunta')?.setAttribute('aria-expanded', 'true');
       }
     });
   });
 
 
   /* ----------------------------------------------------------
-     5. CARROSSEL DE VÍDEOS
+     CARROSSEL DE VÍDEOS
   ---------------------------------------------------------- */
   const track    = document.getElementById('resultadosTrack');
   const btnPrev  = document.getElementById('resultadosPrev');
@@ -115,126 +96,122 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!track) return;
 
-  const cards      = Array.from(track.querySelectorAll('.resultado-card'));
-  let currentIndex = 0;
-  let pointerStartX = 0;
-  let wasDragging   = false;
+  const cards = Array.from(track.querySelectorAll('.resultado-card'));
+  let index   = 0;
 
-  function getVisibleCount() {
-    const vw = window.innerWidth;
-    if (vw >= 1280) return 4;
-    if (vw >= 1024) return 3;
-    if (vw >= 768)  return 3;
-    if (vw >= 480)  return 2;
+  /* Quantos cards aparecem de uma vez */
+  function visibleCount() {
+    const w = window.innerWidth;
+    if (w >= 1280) return 4;
+    if (w >= 1024) return 3;
+    if (w >= 768)  return 3;
+    if (w >= 480)  return 2;
     return 1;
   }
 
-  function getCardWidth() {
-    if (!cards.length) return 260;
-    const gap = parseInt(getComputedStyle(track).gap) || 16;
+  /* Largura de um passo (card + gap) */
+  function stepPx() {
+    if (!cards.length) return 220;
+    const gap = parseInt(getComputedStyle(track).gap) || 14;
     return cards[0].offsetWidth + gap;
   }
 
-  function getMaxIndex() {
-    return Math.max(0, cards.length - getVisibleCount());
+  function maxIndex() {
+    return Math.max(0, cards.length - visibleCount());
   }
 
+  /* Navega para o índice dado */
+  function goTo(i) {
+    index = Math.max(0, Math.min(i, maxIndex()));
+    track.style.transform = `translateX(-${index * stepPx()}px)`;
+    syncUI();
+    pauseAll();
+  }
+
+  /* Atualiza dots e botões */
+  function syncUI() {
+    dotsWrap?.querySelectorAll('.carousel-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === index)
+    );
+    if (btnPrev) btnPrev.disabled = index === 0;
+    if (btnNext) btnNext.disabled = index >= maxIndex();
+  }
+
+  /* Constrói os dots */
   function buildDots() {
     if (!dotsWrap) return;
     dotsWrap.innerHTML = '';
-    const max = getMaxIndex();
-    for (let i = 0; i <= max; i++) {
+    for (let i = 0; i <= maxIndex(); i++) {
       const dot = document.createElement('button');
-      dot.className = 'carousel-dot' + (i === currentIndex ? ' active' : '');
-      dot.setAttribute('aria-label', `Ir para o vídeo ${i + 1}`);
+      dot.className = 'carousel-dot' + (i === index ? ' active' : '');
+      dot.setAttribute('aria-label', `Vídeo ${i + 1}`);
       dot.addEventListener('click', () => goTo(i));
       dotsWrap.appendChild(dot);
     }
   }
 
-  function updateDots() {
-    if (!dotsWrap) return;
-    dotsWrap.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentIndex);
-    });
-  }
+  btnPrev?.addEventListener('click', () => goTo(index - 1));
+  btnNext?.addEventListener('click', () => goTo(index + 1));
 
-  function updateButtons() {
-    if (btnPrev) btnPrev.disabled = currentIndex === 0;
-    if (btnNext) btnNext.disabled = currentIndex >= getMaxIndex();
-  }
 
-  function goTo(index) {
-    currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
-    track.style.transform = `translateX(-${currentIndex * getCardWidth()}px)`;
-    updateDots();
-    updateButtons();
-    pauseAllVideos();
-  }
-
-  if (btnPrev) btnPrev.addEventListener('click', () => goTo(currentIndex - 1));
-  if (btnNext) btnNext.addEventListener('click', () => goTo(currentIndex + 1));
-
-  // Swipe touch e drag mouse
+  /* ---------- SWIPE / DRAG ---------- */
   const viewport = track.closest('.resultados__track-wrapper');
+  let startX = 0;
+  let dragDist = 0;
+  let dragging = false;
+
+  function pointerStart(x) {
+    startX   = x;
+    dragDist = 0;
+    dragging = true;
+  }
+  function pointerMove(x) {
+    dragDist = x - startX;
+  }
+  function pointerEnd() {
+    dragging = false;
+    if (Math.abs(dragDist) > 48) {
+      dragDist < 0 ? goTo(index + 1) : goTo(index - 1);
+    }
+    dragDist = 0;
+  }
+
   if (viewport) {
-    // Touch
-    viewport.addEventListener('touchstart', e => {
-      pointerStartX = e.touches[0].clientX;
-      wasDragging = false;
-    }, { passive: true });
+    /* Touch */
+    viewport.addEventListener('touchstart', e => pointerStart(e.touches[0].clientX), { passive: true });
+    viewport.addEventListener('touchmove',  e => pointerMove(e.touches[0].clientX),  { passive: true });
+    viewport.addEventListener('touchend',   pointerEnd, { passive: true });
 
-    viewport.addEventListener('touchmove', () => {
-      wasDragging = true;
-    }, { passive: true });
-
-    viewport.addEventListener('touchend', e => {
-      if (!wasDragging) return;
-      const delta = e.changedTouches[0].clientX - pointerStartX;
-      if (Math.abs(delta) > 50) delta < 0 ? goTo(currentIndex + 1) : goTo(currentIndex - 1);
-      wasDragging = false;
-    }, { passive: true });
-
-    // Mouse drag
-    viewport.addEventListener('mousedown', e => {
-      pointerStartX = e.clientX;
-      wasDragging = false;
-      track.style.transition = 'none';
-    });
-    window.addEventListener('mousemove', () => { wasDragging = true; });
-    window.addEventListener('mouseup', e => {
+    /* Mouse drag */
+    let mouseDown = false;
+    viewport.addEventListener('mousedown', e => { mouseDown = true; pointerStart(e.clientX); track.style.transition = 'none'; });
+    window.addEventListener('mousemove',   e => { if (mouseDown) pointerMove(e.clientX); });
+    window.addEventListener('mouseup',     () => {
+      if (!mouseDown) return;
+      mouseDown = false;
       track.style.transition = '';
-      if (wasDragging) {
-        const delta = e.clientX - pointerStartX;
-        if (Math.abs(delta) > 50) delta < 0 ? goTo(currentIndex + 1) : goTo(currentIndex - 1);
-      }
-      // Pequeno delay para o click handler não disparar play
-      setTimeout(() => { wasDragging = false; }, 50);
+      pointerEnd();
     });
   }
 
-  // Teclas de seta
+  /* Teclas de seta */
   document.addEventListener('keydown', e => {
-    const section = document.getElementById('resultados');
-    if (!section) return;
-    const rect = section.getBoundingClientRect();
-    if (rect.top > window.innerHeight || rect.bottom < 0) return;
-    if (e.key === 'ArrowRight') { goTo(currentIndex + 1); e.preventDefault(); }
-    if (e.key === 'ArrowLeft')  { goTo(currentIndex - 1); e.preventDefault(); }
+    const sec = document.getElementById('resultados');
+    if (!sec) return;
+    const r = sec.getBoundingClientRect();
+    if (r.top > window.innerHeight || r.bottom < 0) return;
+    if (e.key === 'ArrowRight') { goTo(index + 1); e.preventDefault(); }
+    if (e.key === 'ArrowLeft')  { goTo(index - 1); e.preventDefault(); }
   });
 
 
-  /* ----------------------------------------------------------
-     6. CLICK-TO-PLAY NOS VÍDEOS
-  ---------------------------------------------------------- */
-  function pauseAllVideos(except) {
+  /* ---------- VÍDEOS — click-to-play com áudio ---------- */
+
+  function pauseAll(except) {
     cards.forEach(card => {
       if (card === except) return;
-      const video = card.querySelector('video');
-      if (video && !video.paused) {
-        video.pause();
-        card.classList.remove('playing');
-      }
+      const v = card.querySelector('video');
+      if (v && !v.paused) { v.pause(); card.classList.remove('playing'); }
     });
   }
 
@@ -242,57 +219,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = card.querySelector('video');
     if (!video) return;
 
+    /* Click para play/pause — ignorar se foi drag */
     card.addEventListener('click', () => {
-      // Se foi drag, não faz play
-      if (wasDragging) return;
+      if (Math.abs(dragDist) > 8 || dragging) return;  // era drag, não play
 
       if (video.paused) {
-        pauseAllVideos(card);
+        pauseAll(card);
         video.play()
           .then(() => card.classList.add('playing'))
-          .catch(() => {});
+          .catch(err => {
+            /* Fallback: alguns browsers exigem muted para play sem gesto */
+            if (err.name === 'NotAllowedError') {
+              video.muted = true;
+              video.play().then(() => card.classList.add('playing'));
+            }
+          });
       } else {
         video.pause();
         card.classList.remove('playing');
       }
     });
 
-    video.addEventListener('ended', () => {
-      card.classList.remove('playing');
-    });
+    video.addEventListener('ended',  () => card.classList.remove('playing'));
+    video.addEventListener('pause',  () => card.classList.remove('playing'));
+    video.addEventListener('play',   () => card.classList.add('playing'));
   });
 
-  // Auto-pause ao sair da viewport
-  const videoObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-          const video = entry.target.querySelector('video');
-          if (video && !video.paused) {
-            video.pause();
-            entry.target.classList.remove('playing');
-          }
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-  cards.forEach(card => videoObserver.observe(card));
+  /* Auto-pause ao sair da seção */
+  const secObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) pauseAll();
+    });
+  }, { threshold: 0.05 });
+
+  const secResultados = document.getElementById('resultados');
+  if (secResultados) secObserver.observe(secResultados);
 
 
-  /* ----------------------------------------------------------
-     7. INIT + RESIZE
-  ---------------------------------------------------------- */
+  /* ---------- INIT ---------- */
   buildDots();
-  updateButtons();
+  syncUI();
 
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      goTo(Math.min(currentIndex, getMaxIndex()));
+      goTo(Math.min(index, maxIndex()));
       buildDots();
-    }, 200);
+    }, 180);
   });
 
 });
