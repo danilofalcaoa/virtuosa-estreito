@@ -7,8 +7,8 @@
    :ROOT — DESIGN TOKENS
    ============================================================ */
 :root {
-  --pink:        #C93A6E;
-  --pink-dark:   #A52A59;
+  --pink:        #EC008C;
+  --pink-dark:   #C8007A;
   --wine:        #2D1020;
   --wine-mid:    #3D1A2A;
   --gold:        #E8C37A;
@@ -139,11 +139,11 @@ section { padding-block: var(--sp); }
 .btn--primary {
   background: var(--pink);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(201,58,110,.3);
+  box-shadow: 0 4px 16px rgba(236,0,140,.3);
 }
 .btn--primary:hover {
   background: var(--pink-dark);
-  box-shadow: 0 8px 24px rgba(201,58,110,.4);
+  box-shadow: 0 8px 24px rgba(236,0,140,.4);
 }
 
 .btn--accent {
@@ -209,21 +209,13 @@ section { padding-block: var(--sp); }
   justify-content: space-between;
 }
 
-.navbar__logo { display: flex; flex-direction: column; line-height: 1.1; }
-.navbar__logo-text {
-  font-family: var(--font-h);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--on-dark);
-  letter-spacing: -.02em;
-}
-.navbar__logo-sub {
-  font-family: var(--font-b);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--gold);
+.navbar__logo { display: flex; align-items: center; }
+.navbar__logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+  /* SVG rosa → branco sobre fundo escuro */
+  filter: brightness(0) invert(1);
 }
 
 /* Nav links (desktop) */
@@ -317,7 +309,7 @@ section { padding-block: var(--sp); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 55% at 85% 45%, rgba(201,58,110,.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 55% at 85% 45%, rgba(236,0,140,.18) 0%, transparent 55%),
     radial-gradient(ellipse 40% 35% at 10% 85%, rgba(232,195,122,.1) 0%, transparent 50%);
   pointer-events: none;
 }
@@ -378,8 +370,8 @@ section { padding-block: var(--sp); }
   border-radius: var(--r-lg);
   overflow: hidden;
   aspect-ratio: 4/5;
-  background: linear-gradient(160deg, rgba(201,58,110,.18) 0%, rgba(45,16,32,.6) 100%);
-  border: 1px solid rgba(201,58,110,.25);
+  background: linear-gradient(160deg, rgba(236,0,140,.18) 0%, rgba(45,16,32,.6) 100%);
+  border: 1px solid rgba(236,0,140,.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -489,7 +481,7 @@ ul.beneficios {
 .servico-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--sh-md);
-  border-color: rgba(201,58,110,.3);
+  border-color: rgba(236,0,140,.3);
 }
 .servico-card:hover::after { opacity: 1; }
 
@@ -648,14 +640,14 @@ ul.beneficios {
   position: relative;
   cursor: pointer;
   box-shadow: 0 4px 24px rgba(0,0,0,.45);
-  border: 1px solid rgba(201,58,110,.25);
+  border: 1px solid rgba(236,0,140,.25);
   transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
   aspect-ratio: 9/16;
 }
 .resultado-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(0,0,0,.55);
-  border-color: rgba(201,58,110,.5);
+  border-color: rgba(236,0,140,.5);
 }
 
 /* O video ocupa 100% do card */
@@ -997,6 +989,70 @@ ul.beneficios {
 }
 
 /* ============================================================
+   EQUIPE — FRANQUIA
+   ============================================================ */
+.equipe__fundadora {
+  max-width: 760px;
+  margin-inline: auto;
+  margin-bottom: 56px;
+  text-align: center;
+}
+.equipe__fundadora-texto p {
+  font-size: clamp(15px, 1.5vw, 17px);
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.equipe__fundadora-texto p:last-child { margin-bottom: 0; }
+.equipe__fundadora-texto strong { color: var(--pink); font-weight: 700; }
+
+.equipe__franquia-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.franquia-stat {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 28px 20px;
+  text-align: center;
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+}
+.franquia-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh-sm);
+  border-color: rgba(236,0,140,.25);
+}
+
+.franquia-stat__num {
+  display: block;
+  font-family: var(--font-h);
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--pink);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.franquia-stat__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+@media (min-width: 600px) {
+  .equipe__franquia-stats { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px) {
+  .equipe__franquia-stats { grid-template-columns: repeat(6, 1fr); }
+}
+
+/* ============================================================
    DIFERENCIAIS
    ============================================================ */
 .diferenciais {
@@ -1136,7 +1192,7 @@ ul.beneficios {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 55% 65% at 50% 0%, rgba(201,58,110,.22) 0%, transparent 58%),
+    radial-gradient(ellipse 55% 65% at 50% 0%, rgba(236,0,140,.22) 0%, transparent 58%),
     radial-gradient(ellipse 35% 40% at 85% 100%, rgba(232,195,122,.12) 0%, transparent 50%);
   pointer-events: none;
 }
@@ -1187,15 +1243,12 @@ ul.beneficios {
   border-bottom: 1px solid rgba(255,255,255,.07);
 }
 
-.footer__logo-text {
+.footer__logo-img {
+  height: 36px;
+  width: auto;
   display: block;
-  font-family: var(--font-h);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--on-dark);
-  letter-spacing: -.02em;
-  line-height: 1;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+  filter: brightness(0) invert(1);
 }
 .footer__tagline {
   font-size: 11px;
