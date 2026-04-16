@@ -22,7 +22,7 @@
   --muted:       #6B3D54;
 
   --on-dark:     #F7EEF3;
-  --on-dark-dim: #C9A0B8;
+  --on-dark-dim: rgba(255,255,255,.78);
 
   --font-h:  'Poppins',  system-ui, sans-serif;
   --font-b:  'Nunito',   system-ui, sans-serif;
@@ -198,9 +198,9 @@ section { padding-block: var(--sp); }
   transition: background var(--ease), padding var(--ease), box-shadow var(--ease);
 }
 .navbar.scrolled {
-  background: var(--wine);
+  background: var(--pink);
   padding-block: 10px;
-  box-shadow: 0 2px 20px rgba(0,0,0,.25);
+  box-shadow: 0 2px 20px rgba(236,0,140,.35);
 }
 
 .navbar__inner {
@@ -270,7 +270,7 @@ section { padding-block: var(--sp); }
   flex-direction: column;
   position: fixed;
   inset: 0;
-  background: var(--wine);
+  background: var(--pink);
   justify-content: center;
   align-items: center;
   gap: 36px;
@@ -295,7 +295,7 @@ section { padding-block: var(--sp); }
    HERO
    ============================================================ */
 .hero {
-  background: var(--wine);
+  background: var(--pink);
   min-height: 100dvh;
   display: flex;
   align-items: center;
@@ -309,8 +309,8 @@ section { padding-block: var(--sp); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 55% at 85% 45%, rgba(236,0,140,.18) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 35% at 10% 85%, rgba(232,195,122,.1) 0%, transparent 50%);
+    radial-gradient(ellipse 70% 55% at 85% 45%, rgba(255,255,255,.14) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 35% at 10% 85%, rgba(255,255,255,.07) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -606,7 +606,7 @@ ul.beneficios {
 }
 
 .resultados {
-  background: var(--wine);
+  background: var(--pink);
   padding-block: var(--sp);
   overflow: hidden;
 }
@@ -636,18 +636,18 @@ ul.beneficios {
   width: 220px;
   border-radius: var(--r-md);
   overflow: hidden;
-  background: var(--wine-mid);
+  background: var(--pink-dark);
   position: relative;
   cursor: pointer;
-  box-shadow: 0 4px 24px rgba(0,0,0,.45);
-  border: 1px solid rgba(236,0,140,.25);
+  box-shadow: 0 4px 24px rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.2);
   transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
   aspect-ratio: 9/16;
 }
 .resultado-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0,0,0,.55);
-  border-color: rgba(236,0,140,.5);
+  box-shadow: 0 12px 40px rgba(0,0,0,.45);
+  border-color: rgba(255,255,255,.5);
 }
 
 /* O video ocupa 100% do card */
@@ -992,11 +992,59 @@ ul.beneficios {
    EQUIPE — FRANQUIA
    ============================================================ */
 .equipe__fundadora {
-  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  max-width: 860px;
   margin-inline: auto;
   margin-bottom: 56px;
+}
+@media (min-width: 768px) {
+  .equipe__fundadora {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Placeholder — substituir por <img> quando foto chegar */
+.equipe__fundadora-foto {
+  flex: 0 0 auto;
+}
+.equipe__fundadora-placeholder {
+  width: 200px;
+  aspect-ratio: 4/5;
+  background: var(--bg-alt);
+  border: 2px dashed var(--border);
+  border-radius: var(--r-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px;
   text-align: center;
 }
+.equipe__fundadora-placeholder span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  opacity: .6;
+}
+.equipe__fundadora-placeholder strong {
+  font-family: var(--font-h);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--pink);
+}
+.equipe__fundadora-placeholder em {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--muted);
+}
+
 .equipe__fundadora-texto p {
   font-size: clamp(15px, 1.5vw, 17px);
   color: var(--muted);
@@ -1049,14 +1097,14 @@ ul.beneficios {
   .equipe__franquia-stats { grid-template-columns: repeat(3, 1fr); }
 }
 @media (min-width: 1024px) {
-  .equipe__franquia-stats { grid-template-columns: repeat(6, 1fr); }
+  .equipe__franquia-stats { grid-template-columns: repeat(5, 1fr); }
 }
 
 /* ============================================================
    DIFERENCIAIS
    ============================================================ */
 .diferenciais {
-  background: var(--wine);
+  background: var(--pink);
   padding-block: var(--sp);
 }
 
@@ -1182,7 +1230,7 @@ ul.beneficios {
    CTA FINAL
    ============================================================ */
 .cta-final {
-  background: var(--wine);
+  background: var(--pink);
   padding-block: var(--sp);
   position: relative;
   overflow: hidden;
@@ -1192,8 +1240,8 @@ ul.beneficios {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 55% 65% at 50% 0%, rgba(236,0,140,.22) 0%, transparent 58%),
-    radial-gradient(ellipse 35% 40% at 85% 100%, rgba(232,195,122,.12) 0%, transparent 50%);
+    radial-gradient(ellipse 55% 65% at 50% 0%, rgba(255,255,255,.15) 0%, transparent 58%),
+    radial-gradient(ellipse 35% 40% at 85% 100%, rgba(255,255,255,.08) 0%, transparent 50%);
   pointer-events: none;
 }
 
